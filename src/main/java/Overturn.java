@@ -8,8 +8,8 @@ public class Overturn {
         Overturn over = new Overturn();
         System.out.println(over.reverseString(over.input()));
 
-        int count = 10_000;
-        int count1 = 1_000;
+        int count = 1_000;
+        int count1 = 10_000;
         int count2 = 100_000;
 
         long begin =  System.nanoTime();
@@ -17,7 +17,7 @@ public class Overturn {
             over.reverseString("инпут");
 
         long end = System.nanoTime();
-        System.out.println("Время работы метода на 1000 повторениях" + (end - begin) / count);
+        System.out.println("Время работы метода на 1000 повторениях " + (end - begin) / count);
     }
 
     public String reverseString (String rev) {

@@ -53,18 +53,18 @@ public class Overturn {
         for (int i = 0; i < count; i ++)
             over.reverseString(rev);
         long end = System.nanoTime();
-        System.out.println("Время работы метода на 1000 повторениях " + (end - begin) / count + " мс");
+        System.out.println("Время работы метода на 1000 повторениях " + (end - begin) / count + " нс");
 
         long begin1 =  System.nanoTime();
         for (int i = 0; i < count1; i ++)
             over.reverseString(rev);
         long end1 = System.nanoTime();
-        System.out.println("Время работы метода на 10000 повторениях " + (end1 - begin1) / count1 + " мс");
+        System.out.println("Время работы метода на 10000 повторениях " + (end1 - begin1) / count1 + " нс");
 
         long begin2 =  System.nanoTime();
         for (int i = 0; i < count2; i ++)
             over.reverseString(rev);
         long end2 = System.nanoTime();
-        System.out.println("Время работы метода на 10000 повторениях " + (end2 - begin1) / count2 + " мс");
+        System.out.println("Время работы метода на 100000 повторениях " + (end2 - begin1) / count2 + " нс");
     }
 }

@@ -7,7 +7,7 @@ class OverturnTest {
     public void shouldRevers(){
     Overturn rev = new Overturn();
         String actual = "george";
-        Assertions.assertEquals("egroeg", rev.reverseString(actual));
+        Assertions.assertEquals("egroeg", rev);
     }
 
 }

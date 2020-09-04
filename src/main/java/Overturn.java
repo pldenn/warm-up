@@ -3,21 +3,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Overturn {
+       static Overturn over = new Overturn();
 
+    static boolean onOff = true;
     public static void main(String[] args) {
-        Overturn over = new Overturn();
-        System.out.println(over.reverseString(over.input()));
+        over.reverseString(over.input());
 
-        int count = 1_000;
-        int count1 = 10_000;
-        int count2 = 100_000;
 
-        long begin =  System.nanoTime();
-        for (int i = 0; i < count; i ++)
-            over.reverseString("инпут");
-
-        long end = System.nanoTime();
-        System.out.println("Время работы метода на 1000 повторениях " + (end - begin) / count);
     }
 
     public String reverseString (String rev) {
@@ -26,6 +18,20 @@ public class Overturn {
         StringBuilder result = new StringBuilder();
         for (int i = array.length - 1; i >=0 ; i--) {
             result.append(array[i]);
+
+        }
+        if (onOff){
+            System.out.println(result.toString());
+            onOff = false;
+            int count = 1_000;
+            int count1 = 10_000;
+            int count2 = 100_000;
+
+            long begin =  System.nanoTime();
+            for (int i = 0; i < count; i ++)
+                over.reverseString(rev);
+            long end = System.nanoTime();
+            System.out.println("Время работы метода на 1000 повторениях " + (end - begin) / count + " мс");
         }
         return result.toString();
     }
@@ -42,5 +48,8 @@ public class Overturn {
             System.out.println("IOException: " + e);
         }
         return inputLine;
+    }
+    public void CheckTime(){
+
     }
 }

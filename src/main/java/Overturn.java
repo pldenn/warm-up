@@ -65,6 +65,6 @@ public class Overturn {
         for (int i = 0; i < count2; i ++)
             over.reverseString(rev);
         long end2 = System.nanoTime();
-        System.out.println("Время работы метода на 100000 повторениях " + (end2 - begin1) / count2 + " нс");
+        System.out.println("Время работы метода на 100000 повторениях " + (end2 - begin2) / count2 + " нс");
     }
 }

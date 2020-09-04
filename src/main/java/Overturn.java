@@ -8,8 +8,6 @@ public class Overturn {
     static boolean onOff = true;
     public static void main(String[] args) {
         over.reverseString(over.input());
-
-
     }
 
     public String reverseString (String rev) {
@@ -23,15 +21,8 @@ public class Overturn {
         if (onOff){
             System.out.println(result.toString());
             onOff = false;
-            int count = 1_000;
-            int count1 = 10_000;
-            int count2 = 100_000;
+            over.checkTime(rev);
 
-            long begin =  System.nanoTime();
-            for (int i = 0; i < count; i ++)
-                over.reverseString(rev);
-            long end = System.nanoTime();
-            System.out.println("Время работы метода на 1000 повторениях " + (end - begin) / count + " мс");
         }
         return result.toString();
     }
@@ -49,7 +40,31 @@ public class Overturn {
         }
         return inputLine;
     }
-    public void CheckTime(){
+    public void checkTime(String rev){
+        int warming = 100;
+        int count = 1_000;
+        int count1 = 10_000;
+        int count2 = 100_000;
 
+        for (int i = 0; i < warming; i ++)
+            over.reverseString(rev);
+
+        long begin =  System.nanoTime();
+        for (int i = 0; i < count; i ++)
+            over.reverseString(rev);
+        long end = System.nanoTime();
+        System.out.println("Время работы метода на 1000 повторениях " + (end - begin) / count + " мс");
+
+        long begin1 =  System.nanoTime();
+        for (int i = 0; i < count1; i ++)
+            over.reverseString(rev);
+        long end1 = System.nanoTime();
+        System.out.println("Время работы метода на 10000 повторениях " + (end1 - begin1) / count1 + " мс");
+
+        long begin2 =  System.nanoTime();
+        for (int i = 0; i < count2; i ++)
+            over.reverseString(rev);
+        long end2 = System.nanoTime();
+        System.out.println("Время работы метода на 10000 повторениях " + (end2 - begin1) / count2 + " мс");
     }
 }

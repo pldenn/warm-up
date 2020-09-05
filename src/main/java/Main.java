@@ -7,10 +7,24 @@ public class Main {
     static boolean onOff = true;
 
     public static void main(String[] args) {
+        String inputString;
+        String reverseString;
+        int warmIterations = 100;
+        int[] iterations = {1_000,10_000,100_000};
+
+        inputString = input();
+        reverseString = reverseString(inputString);
+
+
+        System.out.println( inputString + reverseString);
+
+
+
+
         over.reverseString(over.input());
     }
 
-    public String reverseString(String rev) {
+    public static String reverseString(String rev) {
         String result = new StringBuilder(rev).reverse().toString();
 
         if (onOff) {
@@ -22,7 +36,7 @@ public class Main {
     return result;
     }
 
-    public String input() {
+    public static String input() {
         String inputLine = null;
         System.out.println("Введите Ваше слово");
         try {
@@ -36,7 +50,7 @@ public class Main {
         return inputLine;
     }
 
-    public void checkTime(String rev) {
+    public static void checkTime(String rev) {
         int warming = 1000;
         int count = 1_000;
         int count1 = 10_000;

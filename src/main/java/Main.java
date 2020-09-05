@@ -2,29 +2,24 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Overturn {
-       static Overturn over = new Overturn();
-
+public class Main {
+    static Main over = new Main();
     static boolean onOff = true;
+
     public static void main(String[] args) {
         over.reverseString(over.input());
     }
 
-    public String reverseString (String rev) {
+    public String reverseString(String rev) {
+        String result = new StringBuilder(rev).reverse().toString();
 
-        char[] array = rev.toCharArray();
-        StringBuilder result = new StringBuilder();
-        for (int i = array.length - 1; i >=0 ; i--) {
-            result.append(array[i]);
-
-        }
-        if (onOff){
-            System.out.println(result.toString());
+        if (onOff) {
+            System.out.println(result);
             onOff = false;
             over.checkTime(rev);
-
         }
-        return result.toString();
+
+    return result;
     }
 
     public String input() {
@@ -40,29 +35,30 @@ public class Overturn {
         }
         return inputLine;
     }
-    public void checkTime(String rev){
-        int warming = 100;
+
+    public void checkTime(String rev) {
+        int warming = 1000;
         int count = 1_000;
         int count1 = 10_000;
         int count2 = 100_000;
 
-        for (int i = 0; i < warming; i ++)
+        for (int i = 0; i < warming; i++)
             over.reverseString(rev);
 
-        long begin =  System.nanoTime();
-        for (int i = 0; i < count; i ++)
+        long begin = System.nanoTime();
+        for (int i = 0; i < count; i++)
             over.reverseString(rev);
         long end = System.nanoTime();
         System.out.println("Время работы метода на 1000 повторениях " + (end - begin) / count + " нс");
 
-        long begin1 =  System.nanoTime();
-        for (int i = 0; i < count1; i ++)
+        long begin1 = System.nanoTime();
+        for (int i = 0; i < count1; i++)
             over.reverseString(rev);
         long end1 = System.nanoTime();
         System.out.println("Время работы метода на 10000 повторениях " + (end1 - begin1) / count1 + " нс");
 
-        long begin2 =  System.nanoTime();
-        for (int i = 0; i < count2; i ++)
+        long begin2 = System.nanoTime();
+        for (int i = 0; i < count2; i++)
             over.reverseString(rev);
         long end2 = System.nanoTime();
         System.out.println("Время работы метода на 100000 повторениях " + (end2 - begin2) / count2 + " нс");

@@ -29,8 +29,7 @@ public class Main {
     public static String input() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите Ваше слово");
-        String input = sc.nextLine();
-        return input;
+        return sc.nextLine();
     }
 
     public static long[] getExecutionTime(String inputString, int warmIterations, int[] iterations) {
